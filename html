@@ -1,15 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+	<link rel="stylesheet" href="Untitled-2.css">
+</head>
 <body>
 
-<h1>The wbr element</h1>
+<!--navigation-->
+    <nav>
+      <div class="logo">LOGO</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a  class="active" href="#">Feedback</a></li>
+      </ul>
+    </nav>
+   
+<!--automatic slidshow-->
 
-<p>Try to shrink the browser window, to view how the very long word in 
-the paragraph below will break:</p>
+<div class="slideshow-container">
 
-<p>This is a veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryvery<wbr>hellololoc<wbr>placeswhenthebrowserwindowisresized.</p>
+<div class="mySlides fade">
+  
+  <img src="clic2care/3.jfif" style="width:100%">
+  <div class="txt">
+            <h1>Bla Bla Bla</h1>
+        </div>
+		<div class="content">Slide1 heading</div> 
+  <div class="text">Caption Text</div>
+</div>
 
-<p><b>Note:</b> The wbr element is not supported in Internet Explorer 11 (or earlier).</p>
+<div class="mySlides fade">
+ 
+  <img src="clic2care/2.jfif" style="width:100%">
+   <div class="txt">
+            <h1>Bla Bla Bla</h1>
+        </div>
+		<div class="content">Slide2 heading</div> 
+  <div class="text">Caption Two</div>
+</div>
 
+<div class="mySlides fade">
+  
+  <img src="clic2care/1.jpg" style="width:100%">
+   <div class="txt">
+            <h1>Bla Bla Bla</h1>
+        </div>
+		<div class="content">Slide3 heading</div> 
+  <div class="text">Caption Three</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2200); // Change image every 2 seconds
+}
+</script>
+ 
+
+	
 </body>
 </html>
